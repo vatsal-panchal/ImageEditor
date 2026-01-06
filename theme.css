@@ -1,8 +1,10 @@
 :root {
   /* bg colors */
-  --bg-primary-color: black;
+  --bg-primary-color: rgb(15, 15, 15);
   --bg-secondary-color: rgb(36, 34, 34);
   --bg-active-color: white;
+  --bg-danger-color:red;
+  --bg-success-color:green;
 
   /* text colors */
 
