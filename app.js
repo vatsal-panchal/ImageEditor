@@ -1,3 +1,4 @@
+
 const filters = {
   brightness: { value: 100, min: 0, max: 200 },
   contrast: { value: 100, min: 0, max: 200, unit: "%" },
@@ -12,22 +13,36 @@ const filters = {
 };
 
 
-function createFilterElement(name,unit="%",value,max,min){
-    const div =document.createElement("div")
-    div.classList.add("filters")
+const filterContainer = document.querySelector(".filters");
 
-    const input = document.createElement("input")
-    input.type = "range"
-    input.value = value
-    input.min = min
-    input.max= max
-    input.id = name
+function createFilterElement(name, unit = "%", value, min, max) {
+  const div = document.createElement("div");
+  div.classList.add("filter");
 
-    const p = document.createElement("p")
-    p.textContent = name
+  const input = document.createElement("input");
+  input.type = "range";
+  input.min = min;
+  input.max = max;
+   input.value = value;
+  input.id = name;
 
-    div.appendChild(p)
-    div.appendChild(input)
+  const p = document.createElement("p");
+  p.textContent = name;
 
-    return div
+  div.appendChild(p);
+  div.appendChild(input);
+
+  return div;
 }
+
+Object.keys(filters).forEach((key) => {
+  const filerElement = createFilterElement(
+    key,
+    filters[key].unit,
+    filters[key].value,
+    filters[key].min,
+    filters[key].max
+  );
+
+  filterContainer.appendChild(filerElement);
+});
