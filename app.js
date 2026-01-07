@@ -11,36 +11,23 @@ const filters = {
   invert: { value: 0, min: 0, max: 100, unit: "%" },
 };
 
-const filtersContainer = document.querySelector(".filters");
 
-function createFilterElement(name, unit = "%", value, min, max) {
-  const div = document.createElement("div");
-  div.classList.add("filter");
+function createFilterElement(name,unit="%",value,max,min){
+    const div =document.createElement("div")
+    div.classList.add("filters")
 
-  const input = document.createElement("input");
-  input.type = "range";
-  input.min = min;
-  input.max = max;
-  input.value = value;
-  input.name = name;
-  input.id = name;
+    const input = document.createElement("input")
+    input.type = "range"
+    input.value = value
+    input.min = min
+    input.max= max
+    input.id = name
 
-  const p = document.createElement("p");
-  p.textContent = name;
+    const p = document.createElement("p")
+    p.textContent = name
 
-  div.append(p);
-  div.append(input);
+    div.appendChild(p)
+    div.appendChild(input)
 
-  return div;
+    return div
 }
-
-Object.keys(filters).forEach((key) => {
-  const filterElement = createFilterElement(
-    key, // name
-    filters[key].unit, // unit
-    filters[key].value, // value
-    filters[key].min, // min
-    filters[key].max // max
-  );
-  filtersContainer.append(filterElement);
-});
