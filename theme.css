@@ -1,55 +1,64 @@
 :root {
   /* bg colors */
-  --bg-primary-color: rgb(15, 15, 15);
-  --bg-secondary-color: rgb(36, 34, 34);
-  --bg-active-color: white;
-  --bg-danger-color:red;
-  --bg-success-color:green;
+  --bg-primary-color: #0d0d0d;
+  --bg-secondary-color: #161616;
+  --bg-active-color: #ffffff;
+  --bg-danger-color: red;
+  --bg-success-color: green;
+
+  /* button colors */
+  --bg-btn-primary: #2a2a2a;
+  --bg-btn-primary-hover: #353535;
+  --bg-btn-secondary: #1a1a1a;
+  --bg-btn-secondary-hover: #252525;
+  --bg-active-hover: #e8e8e8;
+
+  /* border colors */
+  --border-color: #252525;
+  --border-color-hover: #4a4a4a;
+  --border-color-secondary: #2a2a2a;
+
+  /* slider colors */
+  --bg-slider-track: #252525;
 
   /* text colors */
-
-  --text-primary-color: rgb(255, 255, 255);
-  --text-secondary-color: rgb(200, 200, 200);
-  --text-tertiary-color: rgb(150, 150, 150);
-  --text-active-color: rgb(0, 0, 0);
+  --text-primary-color: #ffffff;
+  --text-secondary-color: #999999;
+  --text-tertiary-color: #666666;
+  --text-active-color: #0d0d0d;
 
   /* padding */
-
-  --padding-sm: 0.5rem;
+  --padding-sm: 0.75rem;
   --padding-md: 1rem;
   --padding-lg: 1.5rem;
   --padding-xl: 2rem;
   --padding-2xl: 3rem;
 
   /* margin */
-
-  --margin-sm: 0.5rem;
+  --margin-sm: 0.65rem;
   --margin-md: 1rem;
   --margin-lg: 1.5rem;
   --margin-xl: 2rem;
   --margin-2xl: 3rem;
 
   /* gutter */
-
-  --gutter-sm: 0.5rem;
+  --gutter-sm: 0.75rem;
   --gutter-md: 1rem;
   --gutter-lg: 1.5rem;
   --gutter-xl: 2rem;
   --gutter-2xl: 3rem;
 
   /* font size */
-
   --font-size-sm: 0.875rem;
-  --font-size-md: 1rem;
+  --font-size-md: 0.95rem;
   --font-size-lg: 1.255rem;
   --font-size-xl: 1.25rem;
   --font-size-2xl: 1.5rem;
 
   /* border radius */
-
-  --border-radius-sm: 0.5rem;
-  --border-radius-md: 0.25rem;
-  --border-radius-lg: 0.3rem;
-  --border-radius-xl: 0.4rem;
-  --border-radius-2xl: 0.5rem;
+  --border-radius-sm: 0.125rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-xl: 0.625rem;
+  --border-radius-2xl: 0.75rem;
 }

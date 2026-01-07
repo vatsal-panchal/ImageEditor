@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   text-transform: capitalize;
 }
 
@@ -17,15 +16,19 @@ html {
   background-color: var(--bg-primary-color);
   color: var(--text-primary-color);
 }
+
 main {
   width: 100%;
+  min-height: 100vh;
+  padding: var(--padding-xl);
 }
 
 main section {
   width: 100%;
-  padding: var(--padding-2xl);
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
-  gap: var(--gutter-md);
+  gap: var(--gutter-lg);
 }
 
 .btn {
@@ -34,18 +37,41 @@ main section {
   border-radius: var(--border-radius-md);
   outline: none;
   cursor: pointer;
-  background-color: var(--bg-active-color);
-  color: var(--text-active-color);
+  background-color: var(--bg-btn-primary);
+  color: var(--text-primary-color);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--border-color);
+}
+
+.btn:hover {
+  background-color: var(--bg-btn-primary-hover);
+  border-color: var(--border-color-hover);
 }
 
 #reset-btn {
-  background-color: var(--bg-danger-color);
-  color: var(--text-primary-color);
+  background-color: var(--bg-btn-secondary);
+  border-color: var(--border-color-secondary);
 }
+
+#reset-btn:hover {
+  background-color: var(--bg-btn-secondary-hover);
+}
+
+#download-btn {
+  background-color: var(--bg-active-color);
+  color: var(--text-active-color);
+  border: none;
+}
+
+#download-btn:hover {
+  background-color: var(--bg-active-hover);
+}
+
 main section .top {
   display: flex;
   align-items: center;
-  gap: var(--gutter-md);
+  gap: var(--gutter-sm);
 }
 
 main section .left {
@@ -53,17 +79,20 @@ main section .left {
   flex-direction: column;
   gap: var(--gutter-lg);
   width: 70%;
-  align-items: center;
 }
 
 main section .right {
   width: 30%;
   background-color: var(--bg-secondary-color);
   padding: var(--padding-lg);
-  border-radius: var(--border-radius-md);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
 }
-#download-btn {
-  background-color: var(--bg-success-color);
+
+main section .right h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: var(--margin-lg);
   color: var(--text-primary-color);
 }
 
@@ -71,61 +100,93 @@ main section .bottom {
   background-color: var(--bg-secondary-color);
   width: 100%;
   padding: var(--padding-2xl);
-  aspect-ratio: 5/3;
-  border-radius: var(--border-radius-md);
+  aspect-ratio: 16/10;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 main section .bottom .placeholder {
   display: flex;
   align-items: center;
   flex-direction: column;
-  opacity: 0.6;
+  gap: var(--gutter-md);
+  opacity: 0.5;
 }
 
 main section .bottom .placeholder i {
-  font-size: 10rem;
+  font-size: 4rem;
+  color: var(--text-tertiary-color);
 }
-main section .right {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gutter-md);
+
+main section .bottom .placeholder p {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary-color);
 }
+
 main section .right .filters {
   display: flex;
   flex-direction: column;
   gap: var(--gutter-lg);
 }
+
 main section .right .filter {
   width: 100%;
+}
+
+main section .right .filter label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-secondary-color);
+  display: block;
+  margin-bottom: var(--margin-sm);
 }
 
 main section .right .filter input {
   width: 100%;
   outline: none;
-  margin-top: var(--margin-sm);
   appearance: none;
-}
-
-main section .right .filter input::-webkit-slider-runnable-track {
-  background-color: var(--bg-active-color);
-  height: 3px;
+  cursor: pointer;
+  height: 4px;
+  background: var(--bg-slider-track);
+  border-radius: var(--border-radius-sm);
 }
 
 main section .right .filter input::-webkit-slider-thumb {
-  cursor: pointer;
-  background-color: blue;
   appearance: none;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  margin-top: -7.1px;
+  background: var(--bg-active-color);
+  cursor: pointer;
+}
+
+main section .right .filter input::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-active-color);
+  cursor: pointer;
+  border: none;
 }
 
 canvas {
   max-width: 100%;
   min-height: 80vh;
-  object-fit: cover;
-  display: none; /* 👈 IMPORTANT */
+  object-fit: contain;
+  display: none;
+  border-radius: var(--border-radius-md);
+}
+
+@media (max-width: 1024px) {
+  main section {
+    flex-direction: column;
+  }
+
+  main section .left,
+  main section .right {
+    width: 100%;
+  }
 }
