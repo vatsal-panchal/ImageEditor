@@ -122,3 +122,10 @@ main section .right .filter input::-webkit-slider-thumb {
   border-radius: 50%;
   margin-top: -7.1px;
 }
+
+canvas {
+  max-width: 100%;
+  min-height: 80vh;
+  object-fit: cover;
+  display: none; /* 👈 IMPORTANT */
+}
